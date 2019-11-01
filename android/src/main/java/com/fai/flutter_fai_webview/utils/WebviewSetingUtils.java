@@ -32,7 +32,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.flutter.Log;
+//import io.flutter.Log;
+import android.util.Log;
 import io.flutter.plugin.common.MethodChannel;
 
 public class WebviewSetingUtils {
