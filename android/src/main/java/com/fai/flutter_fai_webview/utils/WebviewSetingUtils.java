@@ -210,10 +210,18 @@ public class WebviewSetingUtils {
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
-				
 			}
-			
-			
+		}
+		
+		@JavascriptInterface
+		public void clickEachItem(int index) {
+			if (index >= 0) {
+				final Map<String, Object> lMap = new HashMap<>();
+				lMap.put("code", 205);
+				lMap.put("message", "节点点击");
+				lMap.put("content", index);
+				post(lMap);
+			}
 		}
 	}
 	
