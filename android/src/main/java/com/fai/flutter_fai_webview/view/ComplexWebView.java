@@ -178,15 +178,17 @@ public class ComplexWebView implements PlatformView, MethodChannel.MethodCallHan
 					
 					artContent = stringBuilder.toString();
 					
-					mWebView.loadDataWithBaseURL(null, artContent, "text/html", "utf-8",
-							null);
+					mWebView.loadDataWithBaseURL(null, artContent, "text/html", "utf-8", null);
 				} else {
 					//ToastUtils.show("数据异常,请重新进入", mContext);
 					StringBuilder stringBuilder = new StringBuilder();
 					stringBuilder.append("<html><head>");
 					stringBuilder.append("<meta name=\"viewport\" content=\"width=divice-width,initial-scale=1.0\" >\n");
-					stringBuilder.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/sample-css.css\"/> \n");
-					stringBuilder.append("<style>html{margin:0;padding:0;font-family: sans-serif;font-size:14px} body{margin:10px;padding:0} img{width:99%;height:auto;}</style>");
+					stringBuilder.append("<meta name=\"format-detection\" content=\"telephone=no, date=no, address=no, email=no, url=no user-select=none\" >\n");
+					// stringBuilder.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/sample-css.css\"/> \n");
+					// stringBuilder.append("<style>html{margin:0;padding:0;font-family: sans-serif;font-size:14px} body{margin:10px;padding:0} img{width:99%;height:auto;}</style>");
+					stringBuilder.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/styles.css\"/> \n");
+					stringBuilder.append("<script type=\"text/javascript\" src=\"file:///android_asset/MathJax.js?config=TeX-MML-AM_CHTML\"></script>");
 					stringBuilder.append("<script type=\"text/javascript\" src=\"file:///android_asset/client.js\"></script>");
 					
 					stringBuilder.append("</head><body>");
@@ -220,9 +222,9 @@ public class ComplexWebView implements PlatformView, MethodChannel.MethodCallHan
 				"$1$2\" onClick=\"showImagePreview('$2')\"");
 		
 		// 过滤table的内部属性
-		body = body.replaceAll("(<table[^>]*?)\\s+border\\s*=\\s*\\S+", "$1");
-		body = body.replaceAll("(<table[^>]*?)\\s+cellspacing\\s*=\\s*\\S+", "$1");
-		body = body.replaceAll("(<table[^>]*?)\\s+cellpadding\\s*=\\s*\\S+", "$1");
+		// body = body.replaceAll("(<table[^>]*?)\\s+border\\s*=\\s*\\S+", "$1");
+		// body = body.replaceAll("(<table[^>]*?)\\s+cellspacing\\s*=\\s*\\S+", "$1");
+		// body = body.replaceAll("(<table[^>]*?)\\s+cellpadding\\s*=\\s*\\S+", "$1");
 		
 		return body;
 	}
